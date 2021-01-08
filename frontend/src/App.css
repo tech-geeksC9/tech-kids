@@ -26,7 +26,10 @@
   float: right
  }
 .logIn{
-  background-color:#001433  ;
-  background-image:url("https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia0.giphy.com%2Fmedia%2F57Y7JIqvH9okJCJYjp%2Fgiphy.gif");
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-image: url('https://i.pinimg.com/originals/a5/de/39/a5de392b257f6c85f23c0a7cc91feb95.gif');
 }
