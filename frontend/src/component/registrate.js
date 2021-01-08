@@ -64,12 +64,10 @@ const submit =async (e)=>{
  
    return (
     <div  className = 'logIn'>
-      <span>
-        <Avatar  style={{marginLeft:"900px",width:"120px",height:"120px",marginBottom:"-300px"}}size={64} icon={<UserOutlined />} src=""/>
-</span>
+     
   <div className="container p-5">
     
-    <div style={{marginLeft:"-130px",marginTop:"-70px"}}>
+    <div style={{marginLeft:"360px",marginTop:"-50px",width:"300px"}}>
 
     <form>
         <div className="form-group">
@@ -103,7 +101,7 @@ const submit =async (e)=>{
           </Select>
         </div>
         <div>
-            <button onClick={submit} className="btn btn-primary"  style={{backgroundColor:"red",marginLeft:"150px"}}> Submit </button> <br/><br/>
+            <button onClick={submit} className="btn btn-primary"  style={{backgroundColor:"red",marginLeft:"150px",marginTop:"10px"}}> Submit </button> <br/><br/>
             <span style={{color:"white"}}>alredy have account?<Link to='/login' >Login</Link></span>
             
         </div>

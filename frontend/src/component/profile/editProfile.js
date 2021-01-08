@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import "antd/dist/antd.css";
-
+// import { storage } from "./firebase.js";
+// import Footer from './Footer';
+// import Navbar_login from "./Navbar_Login"
+//
 export default class EditProfile extends Component {
     constructor(props) {
       super(props);
-  
       //Defining the "this" in the functions using .bind method
       this.onChangeUsername = this.onChangeUsername.bind(this);
       this.onChangePassword = this.onChangePassword.bind(this);
       this.onChangeAge= this.onChangeAge.bind(this);
       this.onSubmit = this.onSubmit.bind(this);
-     
-  
       this.state = {
         id:localStorage.getItem("id"),
         username: "",
         password: "",
         age: "",
-      
       }
     }
        componentDidMount() {
@@ -35,28 +34,22 @@ export default class EditProfile extends Component {
             console.log(error);
           })
         }
-
-
-
 //Event Handlers:
   onChangeUsername(e) {
     this.setState({
       username: e.target.value
     });
   }
-
   onChangePassword(e) {
     this.setState({
       password : e.target.value
     });
   }
-  
   onChangeAge(e) {
     this.setState({
       age: e.target.value
     });
   }
-
   onSubmit(e) {
     e.preventDefault();   
     const user= {
@@ -68,24 +61,20 @@ export default class EditProfile extends Component {
     console.log(user);
     axios.post("http://localhost:8000/user/update/"+this.state.id, user)
       .then(res => console.log(res.data));
-
     window.location = '/account/'+this.state.id 
   }
-
 // form edit user
   render(){
     return (
-
       <div 
             style={{
-                position: 'absolute', left: '50%', top: '50%',
-                transform: 'translate(-50%, -50%)'
+              width:"1000px",
+              marginLeft:"250px"
             }}>
-
         <br />
-        <div  className="col-md-offset-5 col-md-5" >
+        <div className = "container text-center">
         <form className="text-center border border-light p-9" onSubmit={this.onSubmit}>
-            <h3 className = "mb-3">
+            <h3 className = "mb-3" style={{fontFamily:"cursive" ,color:"blue", boxShadow:" 5px 10px 10px blue"}}>
             Edit user Profile 
             </h3>
             <br />
@@ -95,32 +84,23 @@ export default class EditProfile extends Component {
             <input required={true} type='text'className="form-control col" value= {this.state.username} onChange={this.onChangeUsername} placeholder='User Name'/>                   
             <br></br>                
             </div>
-
             <div className = "col">
             <label > New Password </label>
             <br></br>
             <input required={true}  type="password" name="password" className="form-control col"value= {this.state.password} onChange={this.onChangePassword} placeholder='Creat Password' />
             <br></br>
             </div>
-
             <div className = "col">
             <label >  New Phone Number </label>
-
             <input required={true}  className="form-control col"  value= {this.state.age} onChange={this.onChangeAge} placeholder='Age' />
             <br></br>
             </div>
-            
-
-            <input type='submit' value='Edit Account' className="btn btn-deep-orange darken-4"/>
+            <input type='submit' style={{backgroundColor:"#3399ff", boxShadow:" 5px 10px 10px blue" }} value='Edit Account' className="btn btn-deep-orange darken-4"/>
             <br></br>
             <br></br>
         </form>
-   
         </div>
-       
         </div>
-      
-     
     )
 }
 }

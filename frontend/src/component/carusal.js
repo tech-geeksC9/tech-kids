@@ -15,7 +15,7 @@ import './carusal.css'
             className="d-block w-100 size"
             src="https://www.mykidstime.com/wp-content/uploads/2020/03/Online-learning-for-kids-1280x720.jpg"
             alt="Second slide"
-            style={{opacity:"0.8"}}
+          
           />
           <Carousel.Caption  className='pargraph'>
           <div class="hello">
@@ -30,7 +30,7 @@ import './carusal.css'
             className="d-block w-100 size"
             src="https://www.fluentin3months.com/wp-content/uploads/2019/02/learn-Japanese-for-kids.jpg"
             alt="First slide"
-            style={{opacity:"0.8"}}
+           
           />
           <Carousel.Caption className='pargraph'>
             <div class="hello">
@@ -46,7 +46,7 @@ import './carusal.css'
             className="d-block w-100 size"
             src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fwww.reviewgeek.com%2Fthumbcache%2F0%2F0%2Fc1558535fe4386b31f90f74feb47c061%2Fp%2Fuploads%2F2020%2F03%2F467241fb.png"
             alt="Third slide"
-            style={{opacity:"0.8"}}
+           
           />
       <Carousel.Caption  className='pargraph'>
       <div class="hello">
@@ -60,7 +60,7 @@ import './carusal.css'
             className="d-block w-100 size"
             src="http://www.scholastic.com/content/dam/parents/OptimizedDesignImages/Batch12a/articles/resources-to-help-kids-learn-about-alphabet-article-4-3.jpg"
             alt="Third slide"
-            style={{opacity:"0.8"}}
+           
           />
           <Carousel.Caption className='pargraph'>
           <span class="span1">L</span><span  class="span1">E</span><span class="span1">A</span><span  class="span1">R</span><span  class="span1">N</span><span  class="span1">.</span><span  class="span1">.</span><span  class="span1">.</span  ><span class="span1">&nbsp;</span><span class="span1">H</span><span class="span1">A</span><span class="span1">P</span><span class="span1">P</span><span class="span1">&nbsp;</span><span class="span1">Y</span><span class="span1">.</span><span class="span1">.</span><span class="span1">.</span><span class="span1">H</span><span class="span1">A</span>

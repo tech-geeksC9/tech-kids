@@ -55,7 +55,7 @@ const Signin = (validate)=>{
             <form  className="form">
             <div style={{float:"right"}}>
                    <div className="image"  >
-            <img  src="https://cdn.dribbble.com/users/484196/screenshots/2658398/robs-rocket-3.gif" style={{height:"500px",marginTop:"-40px",float:"left",width:"500px",marginLeft:"190px" }} />
+            <img  src="https://cdn.dribbble.com/users/484196/screenshots/2658398/robs-rocket-3.gif" style={{height:"500px",marginTop:"-40px",float:"left",width:"500px",marginLeft:"550px" }} />
           </div></div>    
         <label htmlFor="formGroupExampleInput">
           
