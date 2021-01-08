@@ -34,7 +34,7 @@ function CSSex3() {
 
       <div>
     <span>
-    <p  id='idid'> ▶▶▶Set the left margin of the apples to 20px which have the class name apple ◀◀◀</p>
+    <p  id='ididid'> ▶▶▶Now this is a cool CATSTRONAUT, but it looks like the page is missing something, Set the page header to "space cat", and but the word 'CATSTRONAUT' between a p-tag to make it more clear◀◀◀</p>
 
 
 <Row>

@@ -33,7 +33,7 @@ function CSSex4() {
         <div>
               <span>
 
-              <p  id='idid'> ▶▶▶Set the background color for the page to "darksalmon" and the background color for {`<h1>`} to "lightblue". ◀◀◀</p>
+              <p  id='idid'> ▶▶▶let's make our website colorfull ,Set the background color for the page to "darksalmon" and the background color for {`<h1>`} to "lightblue". ◀◀◀</p>
               <Row>
 
 <Col  span={12}>  <div  id="textt">
@@ -72,7 +72,7 @@ function CSSex4() {
 <p > This is a paragraph </p >    <br></br>  <br></br>  <br></br>
 </div></div>
 <div>
-  {localStorage.getItem('userA') ===  'background-color:darksalmon;'&& localStorage.getItem('userb')=== "body"?  
+  {localStorage.getItem('userA') ===  'background-color:darksalmon;'&& localStorage.getItem('userb')=== "h1"?  
 
   <div>  
     

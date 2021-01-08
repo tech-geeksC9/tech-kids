@@ -34,7 +34,8 @@ function CSSex3() {
 
       <div>
     <span>
-    <p  id='idid'> ▶▶▶Set the left margin of the apples to 20px which have the class name apple ◀◀◀</p>
+    <p  id='idid'> ▶▶▶
+    pop the cat is too lazy, I asked him to take a shower, play outside, and to make the bed.. but I'm not sure that he received the list, make sure that he'll receive it by adding them to the li-tag and putting "https://lazy-cat.gif" inside the src to see him waking up ◀◀◀</p>
 
 
 <Row>
@@ -76,15 +77,15 @@ function CSSex3() {
 {/* style={{ color: Val ? 'green' : null} */}
 <p > my cat is too lazy, here's her ToDos:</p>
   <li>showering</li>
-  <li> {Val? "playing outside": null}</li>
-  <li> {Val? "making the bed": null}</li>
+  <li> {Val? "play outside": null}</li>
+  <li> {Val? "make the bed": null}</li>
 
 <img  style={{ 
       backgroundImage: Val ? `url("https://i.pinimg.com/originals/f0/0d/57/f00d579703990ead2cd682ff14ea0477.gif")` : null
     }}  width="230" height="250"/>
 </div> 
 <div>
-  {localStorage.getItem('userA') ===  'playing outside'&&localStorage.getItem('userb') ===  'making the bed'&&localStorage.getItem('userc') ===  'https://lazy-cat.gif'?  
+  {localStorage.getItem('userA') ===  'play outside'&&localStorage.getItem('userb') ===  'make the bed'&&localStorage.getItem('userc') ===  '"https://lazy-cat.gif"'?  
 
   <div>  
     

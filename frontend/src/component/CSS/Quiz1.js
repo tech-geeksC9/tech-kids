@@ -12,7 +12,7 @@ export default class Quiz extends Component {
     // initiating the local state
     state = {
         quiestions: {
-            1: 'What does CSS stand for?',
+            1: 'What does CSS stands for?',
             2: 'Where in an HTML document is the correct place to refer to an external style sheet?',
             3: ' Which HTML tag is used to define an internal style sheet?'
         },
@@ -75,9 +75,13 @@ export default class Quiz extends Component {
       }
 
     render(){
+
+
         let { quiestions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
         return(
+            
             <div className="Content">
+                
                 {step <= Object.keys(quiestions).length ? 
                     (<>
                         <Question

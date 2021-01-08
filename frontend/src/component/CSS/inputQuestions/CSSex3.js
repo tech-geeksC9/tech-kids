@@ -28,7 +28,7 @@ function CSSex3() {
 
       <div>
     <span>
-    <p  id='idid'> ▶▶▶Set the left margin of the apples to 20px which have the class name apple ◀◀◀</p>
+    <p  id='ididid'> ▶▶▶let's make some styling for our dancing apples ,Set the left margin of the apples to 20px which have the class apple ◀◀◀</p>
 
 
 <Row>
@@ -43,7 +43,7 @@ function CSSex3() {
 &lt;<span style={{color:"#C71585"}}>head</span> &gt;<br></br>
 &lt;<span style={{color:"#C71585"}}>style</span> &gt;<br></br>
 <span style={{color:"#7FFF00"}}>.apple </span> {"{"}  <br></br>
-<span style={{color:"	#00FFFF"}}>background-color: lightblue; </span>  <br></br>
+<span style={{color:"	#00FFFF"}}>background-color: white; </span>  <br></br>
 <br></br><input type="text" id="q3" size="18" maxLength="18" placeholder='Fill the answer' onChange={(e)=>{setUserAnswers(e.target.value)}} />   <br></br>
 <br/>  {"}"}  <br></br>
 &lt;/<span style={{color:"#C71585"}}>style</span> &gt;<br></br>
@@ -59,17 +59,17 @@ function CSSex3() {
 &lt;/<span style={{color:"#C71585"}}>html</span> &gt;<br></br>
 </pre> </div></Col>
 <Col  id="apples" span={12}>
-  <div  id="applesB" style={{borderStyle: 'solid',width:'350px', }}>
-<ul style={{ marginLeft: Val ? '100px' : '10px',width:'500px'}}>
+  <div  id="applesB" style={{borderStyle: 'solid',width:'350px' }}>
+<ul style={{ marginLeft: Val ? '100px' : '10px',width:'500px', listStyleType:"none" }}>
 <li>
-<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdw1XqsHo9XAMdITImwsanihWa4KJkUfRXUg&usqp=CAU' alt='apple' style={{width:'100px', height:'100px',  marginLeft: '30px'}}  />
+<img src='https://i.gifer.com/CYQx.gif' alt='apple' style={{width:'100px', height:'100px',  marginLeft: '30px'}}  />
 </li>
 <li>
-<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdw1XqsHo9XAMdITImwsanihWa4KJkUfRXUg&usqp=CAU' alt='apple' style={{width:'100px', height:'100px',  marginLeft: '30px'}}  />
+<img src='https://i.gifer.com/CYQx.gif' alt='apple' style={{width:'100px', height:'100px',  marginLeft: '30px'}}  />
 
 </li>
 <li>
-<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdw1XqsHo9XAMdITImwsanihWa4KJkUfRXUg&usqp=CAU' alt='apple' style={{width:'100px', height:'100px',  marginLeft: '30px'}}  />
+<img src='https://i.gifer.com/CYQx.gif' alt='apple' style={{width:'100px', height:'100px',  marginLeft: '30px'}}  />
 
 </li>
 </ul></div>
