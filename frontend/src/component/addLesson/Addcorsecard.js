@@ -4,12 +4,9 @@ import axios from 'axios';
 import {Form , Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { toast } from "react-toastify";
-
 /********************************************** */
 toast.configure();
 class Addcorsecard extends Component {
-  
-
   constructor(props) {
     super(props);
     this.onChangeDescription = this.onChangeDescription.bind(this);
@@ -29,7 +26,6 @@ class Addcorsecard extends Component {
       name:localStorage.getItem("Name"),
       courseId:'1',
       id:localStorage.getItem("id"),
-      
     }
   }
   // this function will handele firebase
@@ -55,11 +51,9 @@ class Addcorsecard extends Component {
           .then(url => {
             console.log(url);
             this.setState({ url: url });
-
           })
       });
   }
-  
   ////////////////////////////// HANDEL STATE//////////////////////
   onChangeDescription(e) {
     this.setState({
@@ -72,15 +66,12 @@ class Addcorsecard extends Component {
     })
   }
   onChangeimage(e) {
-
     if (e.target.files[0]) {
       this.setState({
         image: e.target.files[0]
       })
       console.log('image', e.target.files[0])
-
     }
-
   }
   onChangePrice(e) {
     this.setState({
@@ -99,12 +90,9 @@ class Addcorsecard extends Component {
     }
     var userId = localStorage.getItem('id');
     console.log(task);
-    
-   
     const res = await axios.post('http://localhost:8000/teacher/addcard', task) //create?
     console.log(res.data);
     this.setState({ courseId : res.data._id })
-
     if (res.status === 200) 
     toast("Success! New course is added ", { type: "success" });
   else {
@@ -112,11 +100,7 @@ class Addcorsecard extends Component {
     } 
     const data = await axios.post("http://localhost:8000/user/addNewCourse/"+userId,{id:this.state.courseId});
     console.log(data , this.state.courseId);
-    
-
-    
   }
-
   render() {
     return (
       <div 
@@ -129,8 +113,7 @@ class Addcorsecard extends Component {
           border: '1px solid',
           padding: '70px',
           boxShadow: '5px 10px 10px #888888' ,
-          margin:'auto'
-                      
+          margin:'auto'       
       }}>
        <Form>
               <Form.Group>
@@ -153,12 +136,10 @@ class Addcorsecard extends Component {
               <div>
               <Button type="submit" value="Submit" className="btn btn-deep-orange darken-4" onClick={this.onSubmit}>Submit</Button>
               <Link to={`/addNewLesson ?id=${this.state.courseId}`} style={{fontSize:'1.2rem'}}>Lets go and add a  lesson &#x261D; &#128515; </Link>
-
               </div>
             </Form>
       </div>
     )
   }
 }
-
 export default Addcorsecard;

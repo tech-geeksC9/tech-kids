@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {storage} from './firebase'
-
 export default class EditMatreals extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +10,6 @@ export default class EditMatreals extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onChangevideo = this.onChangevideo.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-
     this.state = {
       material: '',
       description: '',
@@ -55,7 +53,6 @@ export default class EditMatreals extends Component {
      
     }
 
-
     handleUpload = () => {
       const uploadTask = storage.ref(`videos/${this.state.video.name}`).put(this.state.video); 
       uploadTask.on('state_changed', 
@@ -78,13 +75,9 @@ export default class EditMatreals extends Component {
         .then(url => {
             console.log(url);
             this.setState({url:url});
-
         })
     });
   }
-  
-
-
   onChangeMaterial(e) {
     this.setState({
       material: e.target.value
@@ -107,8 +100,6 @@ export default class EditMatreals extends Component {
       description: this.state.description,
       title: this.state.title,
       video:this.state.video
-      
-      
     }
     //  console.log(this.props)
      // console.log(task);
@@ -118,44 +109,60 @@ export default class EditMatreals extends Component {
   .catch(function (error) {
     console.log(error);
   });
-window.location = "/Lissons"
+window.location = "/account/"
   }
   render() {
     return (
-    <div>
-      <h3  >Edit </h3>
+    <div
+    style={{
+  marginTop:"20px",
+      width:"550px",
+      height:"450px",
+      marginLeft:"420px",
+      boxShadow:" 5px 10px 10px grey"
+    }}
+    >
+      <h3  className = "mb-3" style={{textAlign: "center", fontFamily:"cursive" ,color:"black"}} >Edit </h3>
       <form onSubmit={this.onSubmit}>
         <div >
-        <h1  >Material: </h1>
+        <h1  className = "col" style={{textAlign: "center", fontFamily:"cursive" ,color:"black"}}>Material: </h1>
           <input  
+          className = "col"
               type="text"
               required="{true}"
               value={this.state.material}
               onChange={this.onChangeMaterial}
+              style={{width:"300px" ,textAlign:"center",marginLeft:"120PX"}}
               />
         </div>
         <div >
-        <h1  >Description: </h1>
+        <h1  className = "col">Description: </h1>
           <input  
+          className = "col"
               type="text"
               required="{true}"
               
               value={this.state.description}
               onChange={this.onChangeDescription}
+              style={{width:"300px" ,textAlign:"center",marginLeft:"120PX"}}
+
               />
         </div>
         <div >
-        <h1>title: </h1>
+        <h1 className = "col">title: </h1>
           <input 
+          className = "col"
               type="text"
               required="{true}"
               
               value={this.state.title}
               onChange={this.onChangeTitle}
+              style={{width:"300px" ,textAlign:"center",marginLeft:"120PX"}}
+
               />
         </div>
         <div >
-        <input type="submit" value="EditMatreals" className="btn btn-primary btn btn-outline-#4a148c purple darken-4" />
+        <input type="submit" value="Edit Lesson" className="btn btn-primary btn btn-outline-#4a148c purple darken-4"  style={{marginLeft:"220px",marginTop:"20px"}}/>
         </div>
       </form>
     </div>

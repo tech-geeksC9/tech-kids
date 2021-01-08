@@ -135,7 +135,7 @@ class Personalprofile extends React.Component {
             <div style={{marginLeft:"600px"}}>
               
             
-                <span> {this.state.role==="teacher"? "hello teacher" : "helllo student" }</span>
+                <span> {this.state.role==="teacher"? <span style={{fontFamily: "cursive", fontSize: "40px", boxShadow: "10px 20px 10px black"}}>Hello teacher</span> : <span style={{fontFamily: "cursive", fontSize: "40px", boxShadow: "10px 20px 10px black"}}>Hello student</span> }</span>
                 
             <div>
             

@@ -5,13 +5,12 @@ import { Card } from "antd";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import StripeCheckout from "react-stripe-checkout";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 import { Button} from 'react-bootstrap';
 import { Row, Col, Divider,Statistic } from 'antd';
 import { Rate } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
 import fire from '../pices/fire.jpg';
-
 /************************************************/
 toast.configure();
 export default function CardDisplay() {
@@ -33,6 +32,8 @@ export default function CardDisplay() {
       try {
         const result = await axios.get("http://localhost:8000/teacher/card");
         setData(result.data);
+        console.log(data);
+
       } catch (error) {
         console.log(error, "oh nooooo");
       }
@@ -44,7 +45,7 @@ export default function CardDisplay() {
 var obj = {};
   const makePayment = async (token) => {
     console.log("makePayment ", product);
-    
+  
     try {
       const response = await axios.post(
         "http://localhost:8000/payments/charge",
@@ -57,7 +58,6 @@ var obj = {};
           "http://localhost:8000/user/addNewCourse/" + userId,
           obj
         );
-
         // history.push('/account/'+userId);
       } else {
         toast("Something went wrong", { type: "error" });
@@ -110,32 +110,18 @@ var obj = {};
               <span>{card.price}</span>
               <br />
 
-              <StripeCheckout
-                stripeKey={process.env.REACT_APP_KEY}
-                token={makePayment}
-                name="Tick Kid"
-                amount={parseInt(card.price) * 100}
-              >
-                <Button
-                  onClick={() => {
-                     obj = {
-                        name: data[i].Title,
-                      price: data[i].price,
-                      productBy: data[i].Name,
-                      id: data[i]._id
-                     } 
-                    // setProduct({
-                    //   name: data[i].Title,
-                    //   price: data[i].price,
-                    //   productBy: data[i].Name,
-                    //   id: data[i]._id,
-                    // });
-                    checkRegistration();
-                  }}>
-                
-                  Buy this course with just ${card.price}
-                </Button>
-              </StripeCheckout>
+              <Link  to={{    pathname: "/payment",  
+                state: { name: data[i].Title, 
+                   price: data[i].price,
+                    productBy: data[i].Name,
+                    id: data[i]._id,
+                    img:card.image
+                  }  }}
+                    style={{fontSize:'1.2rem'}}
+                    onClick={checkRegistration}
+                    >
+                      Buy this course with just ${card.price}
+              </Link>
             </Card>
           </Col>
         ))}

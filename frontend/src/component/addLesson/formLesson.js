@@ -3,7 +3,6 @@ import {storage} from './firebase'
 import axios from 'axios';
 import {Form , Button} from 'react-bootstrap';
 const queryString = require('query-string');
-
 class Formlesson extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +12,6 @@ class Formlesson extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onChangevideo = this.onChangevideo.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
-
-
-
     this.state = {
       video: null,
       url: '',
@@ -50,11 +46,9 @@ class Formlesson extends Component {
         .then(url => {
             console.log(url);
             this.setState({url:url});
-
         })
     });
   }
-
   onChangeMaterial(e) {
     this.setState({
       material: e.target.value
@@ -77,10 +71,8 @@ class Formlesson extends Component {
       this.setState({
         video : e.target.files[0]
       })
-      console.log('video',e.target.files[0])
-      
+      console.log('video',e.target.files[0]) 
     }
-   
   }
   onSubmit = async(e) =>{
     e.preventDefault();
@@ -104,7 +96,7 @@ class Formlesson extends Component {
         this.setState({
           lessonId:res.data._id
         })
-         console.log("this is data res",res.data)
+         console.log(res.data)
          console.log("this is data res id", res.data._id)
         
       })
@@ -113,13 +105,8 @@ class Formlesson extends Component {
     // task.reset
   }
   
-
-
-  
   render() {
     return (
-
-      
       <div 
       style={{
         padding: '10px',
@@ -158,5 +145,4 @@ class Formlesson extends Component {
     )
   }
 }
-
 export default Formlesson; 

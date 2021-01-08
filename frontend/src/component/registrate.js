@@ -6,9 +6,12 @@ import { Select } from 'antd';
 import { Link } from 'react-router-dom';
 import { Avatar } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
+import { toast } from "react-toastify";
+
 /****************************************************/
 
 //use the arrow function to bind values 
+toast.configure();
 const Create = ()=>{
     const history = useHistory();
     
@@ -57,7 +60,7 @@ const submit =async (e)=>{
 
   history.push('/login')
  } catch (error) {
-     
+  toast(error.response.data.msg , { type: "error" }); 
  }  
   
   }

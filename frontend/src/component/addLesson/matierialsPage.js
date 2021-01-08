@@ -1,21 +1,36 @@
+
+
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {Card, Button} from "react-bootstrap";
 const queryString = require('query-string');
- 
 const Task = props => (
-  <tr>
-    <td>{props.task.material}</td>
-    <td>{props.task.description}</td>
-    <td>{props.task.title}</td>
-    <td>
-    <iframe title="myFrame" src= {props.task.video}width='600' height='400' className="w3-round" alt="TheLessonVedio" />
-    </td>
-    <td>
-    {localStorage.getItem("role")==="teacher"? <td> <Link to={"/EditMatreals/"+props.task._id}>edit</Link></td>:null}
-    {localStorage.getItem("role")==="teacher"? <td> <a href="/teachersM"  onClick={() => { props.deleteTask(props.task._id) }}>delete</a></td>  :null}
-    </td>
-  </tr>
+<>
+<Card style={{textAlign: "center",}}>
+  <Card.Header>{props.task.material}</Card.Header>
+  <Card.Body>
+    <Card.Title style={{fontSize:"40px", fontFamily:"cursive",marginLeft:"320px", width:"650px", boxShadow: "5px 10px 10px #888888 "}} >{props.task.title}</Card.Title>
+    <iframe title="myFrame" src= {props.task.video}width='600' height='400' className="w3-round" alt="TheLessonVedio" style={{boxShadow: "5px 10px 10px #888888 "}} />
+    <Card.Text style={{fontSize:"25px", fontFamily:"cursive", width:"650px",marginLeft:"320px", 
+   boxShadow: "5px 10px 10px #888888 "
+  }} >
+    {props.task.description}
+    </Card.Text>
+  </Card.Body>
+</Card>
+
+ 
+{localStorage.getItem("role")==="teacher"? <Button style={{background:"orange" ,marginLeft: "600px"}}><Link to={"/EditMatreals/"+props.task._id}>edit</Link></Button>:null}
+{localStorage.getItem("role")==="teacher"? <Button  style={{background:"orange" ,marginLeft: "0px"}}><a href="/account/:id"  onClick={() => { props.deleteTask(props.task._id) }}>delete</a></Button> :null}
+
+</>
+
+
+
+
+
+ 
 ) 
 export default class calender extends Component {
   constructor(props) {
@@ -55,7 +70,6 @@ export default class calender extends Component {
       tasks: this.state.tasks.filter(el => el._id !== id)
     })
   }
-
   //use this function to render every added task 
   taskList() {
     return this.state.tasks.map(currenttask => {
@@ -65,31 +79,18 @@ export default class calender extends Component {
   }
  
   render() {
-
-   // 
     return (
+      <div
+      style={{
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'}}
       
-      <div>
+      > 
         <div>
        
-        <table className="table table-bordered">
-          <div style={{color:'red'}}></div>
-          <thead>
-            <tr>
-            <th></th>
-              <th ></th>
-              <th ></th>
-              <td >video</td>
-              
-              {/* {this.state.role==="teacher"? <Link to={`/addNewLesson ?id=${this.state.courseId}`} style={{fontSize:'1.2rem'}}>Lets go and add a  lesson &#x261D; &#128515; </Link>: null } */}
-            
-             
-            </tr>
-          </thead>
-          <tbody>
-            { this.taskList() }
-          </tbody>
-        </table>
+        { this.taskList() }
+
         </div>
 
         <div className = "note-app">
@@ -98,3 +99,6 @@ export default class calender extends Component {
   )
 };
 }
+
+
+
