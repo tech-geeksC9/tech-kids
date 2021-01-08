@@ -73,8 +73,7 @@ function DragNDrop({data}) {
 
     return (
       <div id= 'bbbbbb'>   
-                     <p  id='ididid'> ▶▶▶Read the Following HTML code and check the classes and ides for each tag, then drop the right answer inside its right place ◀◀◀</p>
-<div>
+ <p  id='ididid'> ▶▶▶Hmm, it seems like the headings are in the wrong order let's organize them by looking at the page's right order. ◀◀◀</p><div>
 <div >
 <Row><Col  span={12}> 
  <pre style={{background:"#383838	",  marginLeft: "60px;", borderStyle: "solid;", textAlign: "inherit", border:"20px"

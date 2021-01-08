@@ -28,8 +28,7 @@ function CSSex3() {
 
       <div>
     <span>
-    <p  id='idid'> ▶▶▶Set the left margin of the apples to 20px which have the class name apple ◀◀◀</p>
-
+    <p  id='ididid'> ▶▶▶it seems like this one-cool-cat poster doesn't have a title, let's set it to "cool cats" to complete the cat's awesomeness◀◀◀</p>
 
 <Row>
 

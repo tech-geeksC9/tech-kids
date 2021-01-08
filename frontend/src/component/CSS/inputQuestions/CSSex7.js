@@ -41,7 +41,7 @@ function CSSex4() {
         <div>
               <span>
 
-              <p  id='idid'> ▶▶▶Set the background color for the page to "darksalmon" and the background color for {`<h1>`} to "lightblue". ◀◀◀</p>
+              <p  id='ididid'> ▶▶▶My cool cat manager asked me to set the company name color to green, and to move his description into the center with a cool yellow border, help me deliver my tasks by filling the empty fields, you can add "https://coolest-cat-ever.gif" to the #catImg to see his reaction ◀◀◀</p>
               <Row>
 
 <Col  span={12}>  <div  id="textt">
@@ -57,7 +57,7 @@ function CSSex4() {
 <br></br>  <input type="text" id="q4" size="20" maxLength="30" placeholder='Fill the answer' onChange={(e)=>{setUserAnswers1(e.target.value)}} />   <br></br>
 <span style={{color:"#7FFF00"}}>p</span> {"{"}  <br></br>
 <br></br> <input type="text" id="q5" size="20" maxLength="30" placeholder='Fill the answer' onChange={(e)=>{setUserAnswers2(e.target.value)}} /> <br></br>
- <input type="text" id="q5" size="7" maxLength="7" placeholder='Fill' onChange={(e)=>{setUserAnswers3(e.target.value)}} /> <span style={{color:"	#00FFFF"}}>: 3px solid green;</span>  
+ <input type="text" id="q5" size="7" maxLength="7" placeholder='Fill' onChange={(e)=>{setUserAnswers3(e.target.value)}} /> <span style={{color:"	#00FFFF"}}>: 3px solid yellow;</span>  
 {/* <br></br><input type="text" id="q3" size="18" maxLength="18" placeholder='Fill the answer' onChange={(e)=>{setUserAnswers(e.target.value)}} />   <br></br> */}
 <br/>  {"}"}  <br></br>
 <span style={{color:"#7FFF00"}}>#catImg </span> {"{"}  <br></br>
@@ -70,7 +70,7 @@ function CSSex4() {
 &lt;/<span style={{color:"#C71585"}}>head</span> &gt;<br></br>
 &lt;<span style={{color:"#C71585"}}>body</span> &gt;<br></br>
 
-&lt;<span style={{color:"#C71585"}}>h1</span> &gt; <span style={{color:"#FFFAF0"}}>This is a Heading </span> &lt;/<span style={{color:"#C71585"}}>h1</span> &gt;    <br></br>
+&lt;<span style={{color:"#C71585"}}>h1</span> &gt; <span style={{color:"#FFFAF0"}}>cool cats only company</span> &lt;/<span style={{color:"#C71585"}}>h1</span> &gt;    <br></br>
  &lt;<span style={{color:"#C71585"}}>p</span> &gt; <span style={{color:"#FFFAF0"}}> This is a cool cat  </span> &lt;/<span style={{color:"#C71585"}}>p</span> &gt;     <br></br>
  {/* &lt;<span style={{color:"#C71585"}}>img</span> / &gt;     <br></br> */}
  &lt;<span style={{color:"#C71585"}}>dev</span> &gt; <span style={{color:"#FFFAF0"}}> </span> &lt;/<span style={{color:"#C71585"}}>dev</span> &gt;     <br></br>
@@ -86,7 +86,7 @@ function CSSex4() {
 <Col  id="apples" span={12}>
   <div  id="applesB" style={{borderStyle: 'solid',width:'350px', }}>
 <div>
-<h1  style={{ color: Val ? 'green' : null}} > This is a Heading  </h1 > <br></br> 
+<h1  style={{ color: Val ? 'green' : null}} > cool cats only company </h1 > <br></br> 
 <p  style={{ textAlign: Val ? 'center': null , border: Val ? '3px solid yellow': null }}  > This is a cool cat </p >    <br></br> 
 <img  style={{ 
       backgroundImage: Val ? `url("https://cutewallpaper.org/21/animated-cat-pics/Orange-Meow-Meow-Micro-Letter-Expression-Emoji-Sticker-GIF.gif")` : null
@@ -94,7 +94,7 @@ function CSSex4() {
 
 </div></div>
 <div>
-  {localStorage.getItem('userA') ===  'color: green;' && localStorage.getItem('userb') ===  'text-align: center;' && localStorage.getItem('userc') ===  'border' && localStorage.getItem('userd') ===  'https://coolest-cat-ever.gif'?  
+  {localStorage.getItem('userA') ===  'color: green;' && localStorage.getItem('userb') ===  'text-align: center;' && localStorage.getItem('userc') ===  'border' && localStorage.getItem('userd') ===  '"https://coolest-cat-ever.gif"'?  
 
   <div>  
     

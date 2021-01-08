@@ -71,7 +71,7 @@ function DragNDrop({data}) {
 
     return (
       <div id= 'bbbbbb'>   
-                     <p  id='ididid'> ▶▶▶move the items from the Drag Bar and drop them in the right order inside the Drop bar◀◀◀</p>
+ <p  id='ididid'> ▶▶▶Hmm it seems like the following CSS Properties aren't in the right order, move the items from the Drag Bar and drop them in the right order inside the Drop bar◀◀◀</p>
 <div className="drag-n-drop">
       {list.map((grp, grpI) =>( 
          <div key={grp.title}

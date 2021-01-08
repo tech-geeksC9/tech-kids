@@ -73,7 +73,7 @@ function DragNDrop({data}) {
 
     return (
       <div id= 'bbbbbb'>   
-                     <p  id='ididid'> ▶▶▶Read the Following HTML code and check the classes and ides for each tag, then drop the right answer inside its right place ◀◀◀</p>
+  <p  id='ididid'> ▶▶▶Hmm, it seems like there is some styling on the page but the CSS bars are wide empty.. Read the Following HTML code and check the classes and ids for each tag, then drop the right answers inside their right place, Hint: track the colors and styling of the page ◀◀◀</p>
 <div>
 <div >
 <Row><Col  span={12}> 
