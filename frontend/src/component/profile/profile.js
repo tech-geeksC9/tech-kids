@@ -7,7 +7,7 @@ import { Link, withRouter } from "react-router-dom";
 import ProfilePicChanger from "./profilePicChanger";
 import HtmlCard from '../CourseCards/HtmlCard';
 import CssCard from '../CourseCards/CssCard';
-import { Card } from 'antd';
+import { Card ,Col} from 'antd';
 import { Button} from 'react-bootstrap';
 import flower from '../pices/flower.jpg';
 const queryString = require('query-string');
@@ -101,10 +101,28 @@ class Personalprofile extends React.Component {
     render() {
         const { Meta } = Card;
         if(this.state.htmlCourse){
-            var x = <HtmlCard />
+            var x = 
+            <li >
+            <Card
+            hoverable
+            style={{ width: 300 ,hight: 200 , margin : 'auto',padding:'1rem'}}
+            cover={<img alt="courseImg" src={"https://2.bp.blogspot.com/-eO5lbx98AXU/VgJteZXqfQI/AAAAAAAAAU8/jVrj2vfkWZQ/s1600/what-is-html.jpg"} width='300' height='200'/>}>
+            <Meta title={'HTML'} />
+            <Button className="hh7"><Link to='/HTMLcourse'>Go to HTML</Link></Button>
+            </Card>
+        </li>
         }
         if(this.state.cssCourse){
-            var y = <div style={{marginLeft:"700px" , marginTop:"-300px" }} ><CssCard /></div>
+            var y =   
+             <li >
+            <Card
+            hoverable
+            style={{ width: 300 ,hight: 200 , margin : 'auto',padding:'1rem'}}
+            cover={<img alt="courseImg" src={"https://2.bp.blogspot.com/-me_vlpqkQGw/VgJwY3wm_SI/AAAAAAAAAVI/cyg9I6tfXWs/s400/What%2Bis%2BCSS.jpg"} width='300' height='200'/>}>
+            <Meta title={'CSS'} />
+            <Button className="hh7"><Link to='/CSScourse'>Go To CSS</Link></Button>
+            </Card>
+        </li>
         }
       
         return (
@@ -121,7 +139,7 @@ class Personalprofile extends React.Component {
                 
             <div>
             
-            <div style={{marginLeft:"-550px",float:"left"}}>
+            <div style={{marginLeft:"-550px",float:"left" , backgroundColor:'#80aaff',padding: '10px', border: '1px solid #80aaff',boxShadow: '5px 10px 10px #888888' ,}}>
                 
                 <Avatar  size={200} icon={<UserOutlined />} src={this.state.img} /><br/>
                 <ProfilePicChanger handelImageChange={this.handelImageChange} /><br />
@@ -131,19 +149,33 @@ class Personalprofile extends React.Component {
                  <Link to ={"/edit/" + this.state.id}  className="btn btn-success" >Edit profile</Link>
               
               <br/>
-                <h3  style={{  fontFamily:"Cursive"}}>{this.state.name}</h3>
+                <h3  style={{  fontFamily: "Trirong"}}>{this.state.name}</h3>
                 <span style={{  fontFamily:"Cursive"}}>Age</span>
-                <h3  style={{  fontFamily:"Cursive"}}>{this.state.age}</h3>
-                  {x}
-                {y}
-     </div>
+                <span  style={{  fontFamily:"Cursive"}}>{this.state.age}</span>
+                 
+            </div> 
+           
              </div>
              <br/>
              <label>{this.state.role==="teacher"? "to add a card that will help u to show your lessons" :  "learn a new lesson"} </label>
              <Button>{this.state.role==="teacher"? <Link to="/teacher/addcard" style={{color:'white'}}> Add New Course </Link>:<Link to="/"> register to lesson </Link>}</Button> <br/>
             
-             <div>
-                 <h3>My Courses</h3>
+             <div 
+               style={{
+                padding: '10px',
+                backgroundColor:'#ff8c1a',
+                width: '450px',
+                border: '1px solid #ffff00',
+                borderTopLeftRadius: '20px',
+                borderTopRightRadius: '20px',
+                padding: '50px',
+                boxShadow: '5px 10px 10px #888888' ,
+                margin:'auto'
+                            
+            }}
+             
+             >
+                 <h3 style={{  fontFamily:"Serif" , color:"white", backgroundColor:'#ffa64d'}}>My Courses</h3>
                 <ol>
                 
                     {(this.state.array).map((course,i)=>{
@@ -152,9 +184,9 @@ class Personalprofile extends React.Component {
                         <li key={i}>
                             <Card
                             hoverable
-                            style={{ width: 400 ,hight: 200 , margin : 'auto',padding:'1rem'}}
-                            cover={<img alt="courseImg" src={course.image} />}>
-                            <Meta title={course.Title} description={course.Desceription} />
+                            style={{ width: 300 ,hight: 200 , margin : 'auto',padding:'1rem'}}
+                            cover={<img alt="courseImg" src={course.image} width='300' height='200'/>}>
+                            <Meta title={course.Title} />
 
                         {this.state.role==="teacher"?  <Link to={`/addNewLesson ?id=${course._id}`} style={{fontSize:'1.2rem', padding:'2rem'}} > Add a new lesson </Link>  : <Link to={`/Lissons ?id=${course._id}`} style={{fontSize:'1.2rem', padding:'2rem'}} > Lets Study &#128516;</Link> }
                             </Card>
@@ -162,9 +194,13 @@ class Personalprofile extends React.Component {
                     )
                     
                     })}
+                     {x}
+                     {y}
+                    
                  </ol>
-             </div>
-         
+                
+             </div >
+                   
              </div>
             </div>
             

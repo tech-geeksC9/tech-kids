@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {storage} from './firebase'
 import axios from 'axios';
-import {Form , Button} from 'react-bootstrap'
+import {Form , Button} from 'react-bootstrap';
+const queryString = require('query-string');
 
 class Formlesson extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class Formlesson extends Component {
       material: '',
       description: '',
       title: '',
-      role:localStorage.getItem("role")
+      role:localStorage.getItem("role"),
     }
     
   }
@@ -80,32 +81,30 @@ class Formlesson extends Component {
     }
    
   }
-
   onSubmit(e) {
     e.preventDefault();
+    console.log("this is the id",queryString.parse(this.props.location.search));
+    const courseId = queryString.parse(this.props.location.search);
     //declare an obj that holds all values after change
     const task = {
       title: this.state.title,
       material: this.state.material,
       description: this.state.description,
       video: this.state.url,
-      role:localStorage.getItem("role")
+      role:localStorage.getItem("role"),
+      courseId:courseId.id
       
     }
-    console.log(task);
+    console.log('task before send',task);
     axios.post('http://localhost:8000/materials/add', task) //create?
-      .then(res => console.log(res.data));
+      .then(res => console.log("this is data res",res.data));
+      
+    // task.reset
 
-    // this.setState({
-    //   title: '',
-    //   material: '',
-    //   description: '',
-    //   video: ''
-    // });
-    console.log(task);
+     
     // window.location = '/teachersM'
   }
-
+  
 
 
   
@@ -126,7 +125,7 @@ class Formlesson extends Component {
         margin:'auto'
       }}>
       <Form>
-              <Form.Group>
+              <Form.Group >
                 <Form.File id="exampleFormControlimage" label="Add image" onChange = {this.onChangevideo} />
                  <iframe  title="myFrame" src={this.state.url} alt="firebase-image" height='400' style={{ width: '100%',height: 'auto'}}></iframe>
                  <Button  onClick={this.handleUpload}>Upload</Button>
@@ -143,7 +142,7 @@ class Formlesson extends Component {
                 <Form.Label>Description</Form.Label>
                 <Form.Control size="lg" type='text' placeholder='course Description' onChange={this.onChangeDescription} />
               </Form.Group>
-              <Button variant='primary' type='submit' onClick={this.onSubmit}>
+              <Button value="Submit" id="btnsubmit" onClick={this.onSubmit}>
                 Submit
               </Button>
             </Form>
