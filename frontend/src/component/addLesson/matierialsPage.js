@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+const queryString = require('query-string');
+ 
 const Task = props => (
   <tr>
     <td>{props.task.material}</td>
     <td>{props.task.description}</td>
     <td>{props.task.title}</td>
     <td>
-    <iframe title="myFrame" src= {props.task.video}width='600' height='400' className="w3-round" alt="Norway" />
+    <iframe title="myFrame" src= {props.task.video}width='600' height='400' className="w3-round" alt="TheLessonVedio" />
     </td>
- 
-    {localStorage.getItem("role")==="teacher"? <td> <Link to={"/EditMatreals/"+props.task._id}>edit</Link></td>:null}
-    {localStorage.getItem("role")==="teacher"? <td> <a href="/teachersM"  onClick={() => { props.deleteTask(props.task._id) }}>delete</a></td>  :null}
-
+    <td>
+      <Link to={"/EditMatreals/"+props.task._id}>edit</Link> <a href="/Lissons:kk"  onClick={() => { props.deleteTask(props.task._id) }}>delete</a>
+    </td>
   </tr>
 ) 
 export default class calender extends Component {
@@ -22,16 +22,20 @@ export default class calender extends Component {
     this.deleteTask = this.deleteTask.bind(this)
     this.state = {
       tasks: [],
-      role:localStorage.getItem("role")
+      role:localStorage.getItem("role"),
+      courseId: ''
      };
   }
   componentDidMount() {
-    axios.get('http://localhost:8000/materials/')
+    const courseId = queryString.parse(this.props.location.search);
+    console.log(courseId);
+    axios.get('http://localhost:8000/materials/lessons/'+courseId.id)
       .then(response => {
         this.setState({
           tasks: response.data,
           
         })
+        console.log('this is my data', response.data)
         })
       .catch((error) => {
          console.log(error);
@@ -57,6 +61,7 @@ export default class calender extends Component {
   }
  
   render() {
+
     
     return (
       
@@ -64,6 +69,7 @@ export default class calender extends Component {
         <div>
        
         <table className="table table-bordered">
+          <div style={{color:'red'}}></div>
           <thead>
             <tr>
             <th></th>
@@ -71,11 +77,11 @@ export default class calender extends Component {
               <th ></th>
               <td >video</td>
               
-            
-
-              {this.state.role==="teacher"? <button><Link to="/firrrre"> Add a new lesson </Link></button>: null }
-
-
+              <Link to="/addNewLesson:kk">
+               <button type="button">
+                Add Lessons
+              </button>
+              </Link>
             </tr>
           </thead>
           <tbody>

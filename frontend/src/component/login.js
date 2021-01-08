@@ -39,8 +39,6 @@ const Signin = (validate)=>{
     try {
       const newUser = { email ,password } ;
       const loginRes = await axios.post("http://localhost:8000/api/login" , newUser)
-      console.log(loginRes.data.token)
-   
       localStorage.setItem("theToken", loginRes.data.token);
       localStorage.setItem("id", loginRes.data.user.id);
       localStorage.setItem("role", loginRes.data.user.role);
@@ -48,7 +46,6 @@ const Signin = (validate)=>{
       history.push('/')
       window.location.reload(false);
        } catch (error) {
-      // alert(error.response.data.msg)
       }
     }
   return(

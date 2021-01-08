@@ -22,10 +22,13 @@ import teacherpage from './component/addLesson/matierialsPage'
 import Chat from './component/chatroom/Chat';
 import Join from './component/chatroom/join'
 import EditMatreals from './component/addLesson/editLesson'
+import DashboardPage from "./component/Pages/dashboard";
+import io from "socket.io-client";
+
+import ChatroomPage from "./component/Pages/chatRoom";
 import './App.css'
 // import DashboardPage from "./component/Pages/dashboard";
 // import io from "socket.io-client";
-// // import makeToast from "./component/Toaster";
 // import ChatroomPage from "./component/Pages/chatRoom";
 
 
@@ -51,23 +54,13 @@ function App() {
           <Route exact path="/CSS/ex4" component={CSSex4} />
           <Route exact path="/teacher/addcard" component={Addcorsecard} />
           <Route  path="/teacher/card" component={card} />
-          <ProtectedRoute exact path="/account/:id" component={Personalprofile}  isAuth={localStorage.length > 0} />
-          <Route  path="/firrrre" component={firrrre} />
-          <Route path="/teachersM" component={teacherpage} />
+          <ProtectedRoute exact path="/account/" component={Personalprofile}  isAuth={localStorage.length > 0} />
+          <Route  path="/addNewLesson:kk" component={firrrre} />
+          <Route path="/Lissons:kk" component={teacherpage} />
           <Route path="/EditMatreals/:id" component={EditMatreals} /> 
           <Route path="/Chat" component={Chat} />
           <Route path="/Join" component={Join} />
           <Route exact path="/cchatroom" component={Chat} />
-          {/* {<Route
-          path="/dashboard"
-          render={() => <DashboardPage socket={socket} />}
-          exact
-         /> }
-        {<Route
-          path="/chatroom/:id"
-          render={() => <ChatroomPage socket={socket} />}
-          exact
-         /> } */}
           <Exercises />
         </Switch>
       </BrowserRouter>
@@ -76,5 +69,3 @@ function App() {
 
 };
 export default App; 
-
-//

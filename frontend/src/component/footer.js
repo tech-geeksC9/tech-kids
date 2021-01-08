@@ -23,6 +23,7 @@ const FooterPage = () => {
 
 </h5>
               
+            “I’ve come to believe that each of us has a personal calling that’s as unique as a fingerprint – and that the best way to succeed is to discover what you love and then find a way to offer it to others in the form of service, working hard, and also allowing the energy of the universe to lead you. ”
             </span>
 
           </MDBCol>
