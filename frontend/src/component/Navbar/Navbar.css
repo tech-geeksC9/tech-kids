@@ -1,8 +1,7 @@
-
 .NavbarItems1 {
     /* background-image: url('https://media2.giphy.com/media/Mamp5FV1w8EsMFNuPS/giphy.gif');
     background-color: black; */
-    background-image: url('https://i.pinimg.com/originals/5c/c0/d7/5cc0d7bd98a28bdcd8d0916e5db7bd7e.gif');
+    background-image: url('https://i.pinimg.com/originals/a5/de/39/a5de392b257f6c85f23c0a7cc91feb95.gif');
     /* background-color: black; */
     height: 80px;
     display: flex;
@@ -10,7 +9,6 @@
     align-items: center;
     font-size: 1.1rem;
 }
-
 .navbar-logo1 {
     color: #fff;
     justify-self: start;
@@ -29,7 +27,6 @@
     justify-content: end;
     margin-right: 2rem;
 }
-
 .fa-react {
     margin-left: 0.5rem;
     font-size:2.54rem;
@@ -40,35 +37,27 @@
     text-decoration: none;
     padding: 0.5rem 1rem;
 }
-
 .nav-links1:hover {
     border-left: 30px solid rgb(255, 191, 0); 
     transition: 0.8s;
     background: rgb(255, 128, 0) ;
     border-radius: 4px;
-    
 }
-
 .fa-hamburger {
     color: #fff;
     margin-left: 0.5rem;
     font-size:2rem;
-    
 }
-
 .nav-links-mobile {
     display: none;
 }
-
 .menu-icon1 {
     display: none;
 }
-
 @media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
     }
-
     .nav-menu1 {
         display: flex;
         flex-direction: column;
@@ -80,36 +69,31 @@
         opacity: 1;
         transition: all 0.5s ease;
     }
-
     .nav-menu1.active {
-        background-image: url('https://i.pinimg.com/originals/ca/46/e1/ca46e126dfd4fcb68d8d3dfb349ab711.gif');
+        background-image: url('https://i.pinimg.com/originals/a5/de/39/a5de392b257f6c85f23c0a7cc91feb95.gif');
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 1;
     }
-
     .nav-links1 {
         text-align: center;
         padding: 2rem;
         width: 100%;
         display: table;
     }
-
     .nav-links:hover {
         border-left: 30px solid rgb(255, 191, 0); 
         transition: 0.8s;
         background: rgb(255, 128, 0) ;
         border-radius: 0;
     }
-
     .navbar-logo {
         position: absolute;
         top: 0;
         left: 0;
         transform: translate(25%, 50%);
     }
-
     .menu-icon1 {
         display: block;
         position: absolute;
@@ -119,12 +103,10 @@
         font-size: 1.8rem;
         cursor: pointer;
     }
-
     .fa-times {
         color: #fff;
         font-size: 2rem;
     }
-
     .nav-links-mobile {
         display: block;
         text-align: center;
@@ -137,21 +119,17 @@
         color: #fff;
         font-size: 1.5rem;
     }
-
     .nav-links-mobile:hover {
         background: #fff;
         color: #fff;
         transition: 250ms;
     }
-
     Button {
         display: none;
     }
-
     .img-responsive{
         height:150px;
         width: 150px;    
-        
     }
 }
 /* max-height: 100px;
