@@ -17,7 +17,10 @@ const card_Schema = new mongoose.Schema ({
    },
    price:{
     type: Number,
-   }
+   },
+   chatRoom:{
+    type: String,
+   },
 });
 
 module.exports = mongoose.model('card',card_Schema );

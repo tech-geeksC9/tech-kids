@@ -32,6 +32,10 @@ console.log(product);
             // const { status } = response.data
             if (response.data === "success") {
                 toast("Success! Check email for details", { type: "success" });
+                await axios.post(
+                  'http://localhost:8000/user/addNewCourse/' + userId,
+                  product
+                );
                 history.push('/account/'+userId);
               } else {
                 toast("Something went wrong", { type: "error" });

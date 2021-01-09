@@ -154,7 +154,7 @@ export default class ProfilePicChanger extends Component {
                  width = ' 48px'
                  alt="css"
                 />
-                <button  onClick={() => this.props.handelImageChange(this.state.url)}>Supmet</button>
+                <button  onClick={() => this.props.handelImageChange(this.state.url)}>set</button>
              </div>
                  
              </Modal> 

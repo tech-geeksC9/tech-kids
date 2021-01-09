@@ -33,15 +33,15 @@ function handleChange(value) {
 function validation(email,password) {
     let errors = {};
     if (!email) {
-      errors.email = "Email address is required";
+      errors.email = "";
   
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = "Email address is invalid";
+      errors.email = "";
     }
     if (!password) {
-      errors.password = "Password is required";
+      errors.password = "";
     } else if (password.length < 5) {
-      errors.password = "Password needs to be more than 10 characters";
+      errors.password = "";
     }
     return errors;
   }

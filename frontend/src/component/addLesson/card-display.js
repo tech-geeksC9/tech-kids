@@ -17,7 +17,7 @@ export default function CardDisplay() {
   const history = useHistory();
 
   var userId = localStorage.getItem("id");
-  // var role = localStorage.getItem('role');
+  var role = localStorage.getItem('role');
 
   const [product, setProduct] = useState({});
   const [data, setData] = useState([]);
@@ -106,10 +106,15 @@ var obj = {};
               <Meta title={card.Title} description={card.Desceription} />
               <label>Teacher name :</label>
               <span>{card.Name}</span>
+              <br/>
               <label>The Price : </label>
-              <span>{card.price}</span>
-              <br />
+              <span>{card.price}</span><br/>
+              <label>ChatRoom title : </label>
+              <span>{card.chatRoom}</span>
 
+              <br />
+              {role === 'teacher' ? null : 
+              <Button >
               <Link  to={{    pathname: "/payment",  
                 state: { name: data[i].Title, 
                    price: data[i].price,
@@ -117,11 +122,11 @@ var obj = {};
                     id: data[i]._id,
                     img:card.image
                   }  }}
-                    style={{fontSize:'1.2rem'}}
+                    style={{fontSize:'1.2rem', color:'white'}}
                     onClick={checkRegistration}
                     >
                       Buy this course with just ${card.price}
-              </Link>
+              </Link></Button>}
             </Card>
           </Col>
         ))}

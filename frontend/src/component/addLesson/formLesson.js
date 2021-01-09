@@ -2,7 +2,12 @@ import React, {Component} from 'react';
 import {storage} from './firebase'
 import axios from 'axios';
 import {Form , Button} from 'react-bootstrap';
+import { toast } from "react-toastify";
 const queryString = require('query-string');
+
+toast.configure();
+
+/***************************************************************************** */
 class Formlesson extends Component {
   constructor(props) {
     super(props);
@@ -96,6 +101,7 @@ class Formlesson extends Component {
         this.setState({
           lessonId:res.data._id
         })
+        toast("Success! New lesson is added ", { type: "success" });
          console.log(res.data)
          console.log("this is data res id", res.data._id)
         

@@ -15,6 +15,9 @@ class Addcorsecard extends Component {
     this.onChangeimage = this.onChangeimage.bind(this);
     this.handleUpload = this.handleUpload.bind(this);
     this.onChangePrice = this.onChangePrice.bind(this);
+    this.onChangeChatroom = this.onChangeChatroom.bind(this);
+
+
     this.state = {
       image: null,
       url: '',
@@ -26,6 +29,7 @@ class Addcorsecard extends Component {
       name:localStorage.getItem("Name"),
       courseId:'1',
       id:localStorage.getItem("id"),
+      chatRoom : ''
     }
   }
   // this function will handele firebase
@@ -78,6 +82,13 @@ class Addcorsecard extends Component {
       price: e.target.value
     })
   }
+
+  onChangeChatroom(e) {
+    this.setState({
+      chatRoom: e.target.value
+    })
+  }
+
   ////////////////////////////// HANDEL STATE//////////////////////
   onSubmit = async (e) => {
     e.preventDefault();
@@ -86,7 +97,8 @@ class Addcorsecard extends Component {
       Desceription: this.state.description,
       image: this.state.url,
       Name: this.state.name,
-      price: this.state.price
+      price: this.state.price,
+      chatRoom: this.state.chatRoom
     }
     var userId = localStorage.getItem('id');
     console.log(task);
@@ -132,6 +144,10 @@ class Addcorsecard extends Component {
               <Form.Group controlId='formBasicPrice'>
               <Form.Label>Price</Form.Label>
               <Form.Control type='number' onChange={this.onChangePrice} />
+              </Form.Group>
+              <Form.Group controlId='formBasiccourseTitel'>
+                <Form.Label>ChatRoom title</Form.Label>
+                <Form.Control type='text' placeholder='Enter the Chatroom title' onChange={this.onChangeChatroom} />
               </Form.Group>
               <div>
               <Button type="submit" value="Submit" className="btn btn-deep-orange darken-4" onClick={this.onSubmit}>Submit</Button>
